@@ -1,18 +1,16 @@
+/* Base styles */
 @layer base {
   * {
     box-sizing: border-box;
   }
-<br>
   html {
     scroll-behavior: smooth;
   }
-<br>
   body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: #1f2937;
   }
-<br>
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.2;
@@ -24,7 +22,6 @@
   .logo-text {
     font-family: 'Pacifico', serif;
   }
-<br>
   /* Hero section gradient overlay */
   .hero-overlay {
     background: linear-gradient(
@@ -34,34 +31,85 @@
       rgba(0, 0, 0, 0.6) 100%
     );
   }
-<br>
   /* Card hover effects */
   .info-card {
-    @apply bg-white rounded-xl shadow-lg p-8 text-center transition-all duration-300;
+    /* Si usas Tailwind, @apply es válido, si no, reemplaza por CSS normal */
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
   }
-<br>
   .info-card:hover {
-    @apply shadow-2xl transform -translate-y-2;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transform: translateY(-0.5rem);
   }
-<br>
   /* Button animations */
   .btn-primary {
-    @apply bg-yellow-500 hover:bg-yellow-600 text-black font-semibold rounded-lg transition-all duration-200 px-6 py-3 shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap flex items-center justify-center cursor-pointer;
+    background: #f59e0b;
+    color: #000;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
   }
-<br>
+  .btn-primary:hover {
+    background: #d97706;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transform: scale(1.05);
+  }
   .btn-secondary {
-    @apply bg-black hover:bg-gray-800 text-white font-semibold rounded-lg transition-all duration-200 px-6 py-3 shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap flex items-center justify-center cursor-pointer;
+    background: #000;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
   }
-<br>
+  .btn-secondary:hover {
+    background: #222;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transform: scale(1.05);
+  }
   .btn-whatsapp {
-    @apply bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-all duration-200 px-6 py-3 shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap flex items-center justify-center cursor-pointer;
+    background: #22c55e;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
   }
-<br>
+  .btn-whatsapp:hover {
+    background: #16a34a;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transform: scale(1.05);
+  }
   /* Navigation styles */
   .nav-link {
-    @apply text-gray-700 hover:text-yellow-600 font-medium transition-colors duration-200 relative;
+    color: #374151;
+    font-weight: 500;
+    transition: color 0.2s;
+    position: relative;
   }
-<br>
+  .nav-link:hover {
+    color: #f59e0b;
+  }
   .nav-link:hover::after {
     content: '';
     position: absolute;
@@ -72,39 +120,53 @@
     background: linear-gradient(90deg, #f59e0b, #d97706);
     border-radius: 1px;
   }
-<br>
   /* Icon containers */
   .icon-container {
-    @apply w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-6 transition-all duration-300;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    margin: 0 auto 1.5rem auto;
+    transition: all 0.3s;
   }
-<br>
   .icon-container.yellow {
-    @apply bg-yellow-100 text-yellow-600;
+    background: #fef3c7;
+    color: #f59e0b;
   }
-<br>
   .icon-container.green {
-    @apply bg-green-100 text-green-600;
+    background: #d1fae5;
+    color: #22c55e;
   }
-<br>
   .icon-container:hover {
-    @apply transform scale-110;
+    transform: scale(1.1);
   }
-<br>
   /* Schedule table styling */
   .schedule-row {
-    @apply flex justify-between items-center border-b border-gray-200 pb-2 mb-2 last:border-b-0 last:mb-0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
   }
-<br>
+  .schedule-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
   /* Mobile menu animation */
   .mobile-menu {
-    @apply lg:hidden py-4 border-t border-gray-200 overflow-hidden transition-all duration-300;
+    display: block;
+    padding: 1rem 0;
+    border-top: 1px solid #e5e7eb;
+    overflow: hidden;
+    transition: all 0.3s;
   }
-<br>
   .mobile-menu.show {
     max-height: 300px;
     opacity: 1;
   }
-<br>
   .mobile-menu.hide {
     max-height: 0;
     opacity: 0;
@@ -116,45 +178,57 @@
   .gradient-gold {
     background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
   }
-<br>
   .gradient-text-gold {
     background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-<br>
   /* Sombras personalizadas */
   .shadow-gold {
     box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
   }
-<br>
   .shadow-large {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   }
-<br>
   /* Animaciones */
   .animate-fade-in {
     animation: fadeIn 0.8s ease-in-out;
   }
-<br>
   .animate-slide-up {
     animation: slideUp 0.6s ease-out;
   }
-<br>
   .animate-bounce-gentle {
     animation: bounceGentle 2s infinite;
   }
-<br>
   /* Responsive text */
   .text-responsive-xl {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+    font-size: 1.875rem;
   }
-<br>
+  @media (min-width: 640px) {
+    .text-responsive-xl { font-size: 2.25rem; }
+  }
+  @media (min-width: 768px) {
+    .text-responsive-xl { font-size: 3rem; }
+  }
+  @media (min-width: 1024px) {
+    .text-responsive-xl { font-size: 3.75rem; }
+  }
+  @media (min-width: 1280px) {
+    .text-responsive-xl { font-size: 4.5rem; }
+  }
   .text-responsive-lg {
-    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+    font-size: 1.25rem;
   }
-<br>
+  @media (min-width: 640px) {
+    .text-responsive-lg { font-size: 1.5rem; }
+  }
+  @media (min-width: 768px) {
+    .text-responsive-lg { font-size: 1.875rem; }
+  }
+  @media (min-width: 1024px) {
+    .text-responsive-lg { font-size: 2.25rem; }
+  }
   /* Background patterns */
   .bg-pattern-dots {
     background-image: radial-gradient(circle, rgba(245, 158, 11, 0.1) 1px, transparent 1px);
@@ -198,16 +272,13 @@
   .hero-section {
     min-height: 70vh;
   }
-<br>
   .hero-title {
     font-size: 2.5rem;
     line-height: 1.1;
   }
-<br>
   .hero-subtitle {
     font-size: 1.5rem;
   }
-<br>
   .info-card {
     padding: 1.5rem;
   }
@@ -216,11 +287,9 @@
   .hero-title {
     font-size: 2rem;
   }
-<br>
   .hero-subtitle {
     font-size: 1.25rem;
   }
-<br>
   .btn-primary,
   .btn-secondary,
   .btn-whatsapp {
@@ -268,12 +337,10 @@ select:focus {
   .no-print {
     display: none !important;
   }
-<br>
   body {
     color: black !important;
     background: white !important;
   }
-<br>
   .info-card {
     border: 1px solid #ccc !important;
     box-shadow: none !important;
