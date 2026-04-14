@@ -5,190 +5,160 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Halcon Dorado - Escuela de Fútbol</title>
     <meta name="description" content="Halcon Dorado - Donde nacen los campeones. Formamos futbolistas integrales con valores, disciplina y pasión por el deporte." />
-    <meta name="keywords" content="escuela de fútbol,  dorados, fútbol infantil, academia deportiva, entrenamiento fútbol" />
-
-    <!-- Google Fonts -->
+    <meta name="keywords" content="escuela de fútbol, dorados, fútbol infantil, academia deportiva, entrenamiento fútbol" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Remix Icon -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Estilos personalizados (opcional) -->
     <link rel="stylesheet" href="Estilos.css" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="imagenes/Captura.PNG" />
+    <link rel="icon" type="image/png" href="imagenes/Captura1.png" />
+    <style>
+      :root { --navy: #0d1b2a; --navy2: #0f2236; --gold: #c9a227; --gold-light: #e2b93b; }
+      body { background-color: #0d1b2a; color: #e5d9b6; }
+      .bg-navy { background-color: #0d1b2a; }
+      .bg-navy2 { background-color: #0f2236; }
+      .bg-card { background-color: #112240; }
+      .border-gold { border-color: #c9a227; }
+      .text-gold { color: #c9a227; }
+      input, textarea { background-color: #0f2236 !important; color: #e5d9b6 !important; border: 1px solid #c9a22755 !important; padding: 0.5rem 0.75rem; }
+      input::placeholder, textarea::placeholder { color: #8a7a5a; }
+      input:focus, textarea:focus { outline: none; border-color: #c9a227 !important; box-shadow: 0 0 0 2px #c9a22733; }
+    </style>
   </head>
-  <body class="text-gray-800 antialiased" style="font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';">
+  <body class="m-0 p-0 antialiased" style="font-family: 'Inter', system-ui, sans-serif; background-color: #0d1b2a; color: #e5d9b6;">
+
     <!-- Header -->
-    <header class="bg-white/90 backdrop-blur shadow-md sticky top-0 z-50">
+    <header style="background-color: #0a1520cc; border-bottom: 1px solid #c9a22733;" class="backdrop-blur-md sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center py-4">
-          <!-- Logo -->
-          <a href="#inicio" class="flex items-center space-x-3">
-            <div class="w-12 h-12 flex items-center justify-center rounded-full shadow overflow-hidden">
-              <img src="imagenes/Captura.PNG" alt="Logo Halcon Dorado" class="w-full h-full object-cover" />
+          <a href="#inicio" class="flex items-center space-x-3 hover:opacity-90 transition-opacity">
+            <div class="w-12 h-12 flex items-center justify-center rounded-full shadow-lg overflow-hidden" style="ring: 2px solid #c9a227; border: 2px solid #c9a227;">
+              <img src="imagenes/Captura1.png" alt="Logo Halcon Dorado" class="w-full h-full object-cover" />
             </div>
             <div>
-              <h1 class="text-2xl font-bold text-black" style="font-family: 'Pacifico', cursive;">
-                Halcon Dorado
-              </h1>
-              <p class="text-xs text-gray-600">Escuela de Fútbol</p>
+              <h1 class="text-2xl font-bold" style="color: #c9a227; font-family: 'Pacifico', cursive;">Halcon Dorado</h1>
+              <p class="text-xs" style="color: #e2b93b;">Escuela de Fútbol</p>
             </div>
           </a>
 
-          <!-- Desktop Navigation -->
-          <nav class="hidden lg:flex items-center space-x-8">
-            <a href="#inicio" class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Inicio</a>
-            <a href="#quienes-somos" class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Quiénes somos</a>
-            <a href="#categorias" class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Categorías</a>
-            <a href="#inscripciones" class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Inscripciones</a>
-            <a href="#noticias" class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Noticias</a>
-            <a href="#galeria" class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Galería</a>
-            <a href="#contacto" class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Contacto</a>
+          <nav class="hidden lg:flex items-center space-x-2">
+            <a href="#inicio" class="text-white hover:text-yellow-400 font-semibold transition-all duration-200 relative group px-4 py-2 rounded-lg">Inicio</a>
+            <a href="#quienes-somos" class="text-white hover:text-yellow-400 font-semibold transition-all duration-200 px-4 py-2 rounded-lg">Quiénes somos</a>
+            <a href="#categorias" class="text-white hover:text-yellow-400 font-semibold transition-all duration-200 px-4 py-2 rounded-lg">Categorías</a>
+            <a href="#inscripciones" class="text-white hover:text-yellow-400 font-semibold transition-all duration-200 px-4 py-2 rounded-lg">Inscripciones</a>
+            <a href="#noticias" class="text-white hover:text-yellow-400 font-semibold transition-all duration-200 px-4 py-2 rounded-lg">Noticias</a>
+            <a href="#galeria" class="text-white hover:text-yellow-400 font-semibold transition-all duration-200 px-4 py-2 rounded-lg">Galería</a>
+            <a href="#contacto" class="font-bold px-6 py-2 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 ml-4" style="background-color: #c9a227; color: #0d1b2a;">Contacto</a>
           </nav>
 
-          <!-- Mobile Menu Button -->
-          <button class="lg:hidden p-2" aria-label="Abrir menú" onclick="toggleMobileMenu()">
-            <i class="ri-menu-line text-2xl text-gray-700" id="menu-icon"></i>
+          <button class="lg:hidden p-2 hover:text-yellow-100 transition-colors" style="color: #c9a227;" aria-label="Abrir menú" onclick="toggleMobileMenu()">
+            <i class="ri-menu-line text-2xl" id="menu-icon"></i>
           </button>
         </div>
-        <!-- Mobile Navigation -->
-        <div class="lg:hidden py-4 border-t border-gray-200 hidden" id="mobile-menu">
-          <nav class="flex flex-col space-y-4">
-            <a href="#inicio" class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Inicio</a>
-            <a href="#quienes-somos" class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Quiénes somos</a>
-            <a href="#categorias" class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Categorías</a>
-            <a href="#inscripciones" class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Inscripciones</a>
-            <a href="#noticias" class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Noticias</a>
-            <a href="#galeria" class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Galería</a>
-            <a href="#contacto" class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Contacto</a>
+        <div class="lg:hidden py-4 hidden" style="border-top: 1px solid #c9a22733;" id="mobile-menu">
+          <nav class="flex flex-col space-y-2">
+            <a href="#inicio" class="text-white hover:text-yellow-400 font-semibold transition-colors px-4 py-2 rounded-lg">Inicio</a>
+            <a href="#quienes-somos" class="text-white hover:text-yellow-400 font-semibold transition-colors px-4 py-2 rounded-lg">Quiénes somos</a>
+            <a href="#categorias" class="text-white hover:text-yellow-400 font-semibold transition-colors px-4 py-2 rounded-lg">Categorías</a>
+            <a href="#inscripciones" class="text-white hover:text-yellow-400 font-semibold transition-colors px-4 py-2 rounded-lg">Inscripciones</a>
+            <a href="#noticias" class="text-white hover:text-yellow-400 font-semibold transition-colors px-4 py-2 rounded-lg">Noticias</a>
+            <a href="#galeria" class="text-white hover:text-yellow-400 font-semibold transition-colors px-4 py-2 rounded-lg">Galería</a>
+            <a href="#contacto" class="font-bold px-4 py-2 rounded-lg transition-all duration-300 mt-2 text-center" style="background-color: #c9a227; color: #0d1b2a;">Contacto</a>
           </nav>
         </div>
       </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="relative min-h-[80vh] md:min-h-screen flex items-center justify-center bg-gradient-to-b from-neutral-900 to-neutral-800">
-            <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center text-white">
-          <h1 class="text-5xl lg:text-7xl font-extrabold mb-6 leading-tight">
-            <span class="text-yellow-400">Halcon Dorado</span>
-          </h1>
-          <p class="text-2xl lg:text-4xl font-semibold mb-8 text-yellow-100">
-            Donde nacen los campeones
-          </p>
-          <p class="text-lg lg:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
-            Formamos futbolistas integrales con valores, disciplina y pasión por el deporte.
-            Únete a nuestra familia deportiva y desarrolla tu máximo potencial.
-          </p>
-          <a href="#inscripciones" class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold rounded-lg transition-all duration-200 px-12 py-4 text-lg shadow-2xl hover:scale-105 inline-flex items-center">
-            <i class="ri-arrow-right-line mr-2"></i>
-            Inscríbete ahora
-          </a>
-        </div>
+    <!-- Hero -->
+    <section id="inicio" class="relative w-full flex items-center justify-center overflow-hidden" style="min-height: 100vh; margin-top: -80px; padding-top: 80px;">
+      <div class="absolute inset-0 z-0">
+        <img src="imagenes/animate-the-golden-falcon-emblem-with-a-majestic-g-ezgif.com-optimize.gif" alt="Fondo Halcon Dorado" class="w-full h-full object-cover" />
+        <div class="absolute inset-0" style="background: #0d1b2acc;"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/60"></div>
+      </div>
+      <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
+        <h1 class="text-5xl lg:text-7xl font-extrabold mb-6 leading-tight" style="color: #c9a227;">Halcon Dorado</h1>
+        <p class="text-2xl lg:text-4xl font-semibold mb-8" style="color: #e2b93b;">Donde nacen los campeones</p>
+        <p class="text-lg lg:text-xl mb-12 max-w-2xl mx-auto leading-relaxed" style="color: #c8bfa0;">
+          Formamos futbolistas integrales con valores, disciplina y pasión por el deporte. Únete a nuestra familia deportiva y desarrolla tu máximo potencial.
+        </p>
+        <a href="#inscripciones" class="font-semibold rounded-lg transition-all duration-200 px-12 py-4 text-lg shadow-2xl hover:scale-105 inline-flex items-center" style="background-color: #c9a227; color: #0d1b2a;">
+          <i class="ri-arrow-right-line mr-2"></i>Inscríbete ahora
+        </a>
       </div>
     </section>
 
-    <!-- Quick Info Section -->
-    <section class="py-16 bg-gray-50">
+    <!-- Quick Info -->
+    <section class="py-16" style="background-color: #0a1520;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Horarios -->
-          <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
-            <div class="w-16 h-16 flex items-center justify-center bg-yellow-100 rounded-full mx-auto mb-6">
-              <i class="ri-time-line text-3xl text-yellow-600"></i>
+          <div class="rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300" style="background-color: #112240; border: 1px solid #c9a22740;">
+            <div class="w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-6" style="background-color: #c9a22720; border: 1px solid #c9a22760;">
+              <i class="ri-time-line text-3xl" style="color: #c9a227;"></i>
             </div>
-            <h3 class="text-2xl font-bold mb-4 text-gray-800">Horarios de Entrenamiento</h3>
-            <div class="space-y-3 text-gray-600">
-              <div class="flex justify-between items-center border-b pb-2">
-                <span class="font-medium">Domingos</span>
-                <span>8:00 AM - 12:00 PM</span>
+            <h3 class="text-2xl font-bold mb-4" style="color: #c9a227;">Horarios de Entrenamiento</h3>
+            <div class="space-y-3" style="color: #c8bfa0;">
+              <div class="flex justify-between items-center pb-2" style="border-bottom: 1px solid #c9a22730;">
+                <span class="font-medium">Domingos</span><span>8:00 AM - 12:00 PM</span>
               </div>
-              <div class="flex justify-between items-center border-b pb-2">
-                <span class="font-medium">Sábados</span>
-                <span>2:00 PM - 6:00 PM</span>
+              <div class="flex justify-between items-center pb-2" style="border-bottom: 1px solid #c9a22730;">
+                <span class="font-medium">Sábados</span><span>2:00 PM - 6:00 PM</span>
               </div>
               <div class="flex justify-between items-center">
-                <span class="font-medium">Miércoles</span>
-                <span>5:00 PM - 7:00 PM</span>
+                <span class="font-medium">Miércoles</span><span>5:00 PM - 7:00 PM</span>
               </div>
             </div>
           </div>
 
           <!-- Ubicación -->
-          <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
-            <div class="w-16 h-16 flex items-center justify-center bg-yellow-100 rounded-full mx-auto mb-6">
-              <i class="ri-map-pin-line text-3xl text-yellow-600"></i>
+          <div class="rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300" style="background-color: #112240; border: 1px solid #c9a22740;">
+            <div class="w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-6" style="background-color: #c9a22720; border: 1px solid #c9a22760;">
+              <i class="ri-map-pin-line text-3xl" style="color: #c9a227;"></i>
             </div>
-            <h3 class="text-2xl font-bold mb-4 text-gray-800">Ubicación</h3>
-            <p class="text-gray-600 mb-4">
-              Campo Deportivo Municipal<br/>
-              Av. Los Deportes #123<br/>
-              Ciudad Deportiva
-            </p>
-            <div class="bg-gray-100 rounded-lg p-4">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.2!2d-74.0!3d4.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMzYnMDAuMCJOIDc0wrAwMCcwMC4wIlc!5e0!3m2!1ses!2sco!4v1600000000000!5m2!1ses!2sco"
-                width="100%"
-                height="150"
-                style="border:0;"
-                allowfullscreen
-                loading="lazy"
-                class="rounded-lg"
-                title="Mapa ubicación Halcon Dorado"
-              ></iframe>
-            </div>
+            <h3 class="text-2xl font-bold mb-4" style="color: #c9a227;">Ubicación</h3>
+            <p class="mb-4" style="color: #c8bfa0;">Parque Atabanza<br/>Suba, Bogotá</p>
+            <a href="https://www.google.com/maps/place/Parque+Atabanza/@4.7086157,-74.0627325,767m/data=!3m1!1e3!4m6!3m5!1s0x8e3f85348a619c59:0x2286b8404a76643a!8m2!3d4.7086104!4d-74.0581191!16s%2Fg%2F11c604p8qx?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity"
+              style="background-color: #c9a22720; border: 1px solid #c9a22760; color: #c9a227;">
+              <i class="ri-map-2-line"></i> Ver en Google Maps
+            </a>
           </div>
 
           <!-- WhatsApp -->
-          <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
-            <div class="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-6">
-              <i class="ri-whatsapp-line text-3xl text-green-600"></i>
+          <div class="rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300" style="background-color: #112240; border: 1px solid #22c55e40;">
+            <div class="w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-6" style="background-color: #22c55e20; border: 1px solid #22c55e50;">
+              <i class="ri-whatsapp-line text-3xl text-green-400"></i>
             </div>
-            <h3 class="text-2xl font-bold mb-4 text-gray-800">Contacto Rápido</h3>
-            <p class="text-gray-600 mb-6">
-              ¿Tienes preguntas? Contáctanos directamente por WhatsApp para información inmediata
-            </p>
-            <a
-              href="https://wa.me/573001234567?text=Hola,%20me%20interesa%20información%20sobre%20halcon%20Dorado%20Escuela%20de%20Fútbol"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors shadow-lg"
-            >
-              <i class="ri-whatsapp-fill mr-2"></i>
-              Escribir por WhatsApp
+            <h3 class="text-2xl font-bold mb-4 text-green-400">Contacto Rápido</h3>
+            <p class="mb-6" style="color: #c8bfa0;">¿Tienes preguntas? Contáctanos directamente por WhatsApp para información inmediata</p>
+            <a href="https://wa.me/573001234567?text=Hola,%20me%20interesa%20información%20sobre%20halcon%20Dorado%20Escuela%20de%20Fútbol"
+              target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors shadow-lg">
+              <i class="ri-whatsapp-fill mr-2"></i>Escribir por WhatsApp
             </a>
-            <p class="text-sm text-gray-500 mt-3">+57 300 123 4567</p>
+            <p class="text-sm mt-3" style="color: #8a7a5a;">+57 300 123 4567</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Quiénes somos -->
-    <section id="quienes-somos" class="py-20">
+    <section id="quienes-somos" class="py-20" style="background-color: #0d1b2a;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Quiénes <span class="text-yellow-600">somos</span></h2>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            En halcon Dorado formamos futbolistas con una visión integral del deporte. Nuestro enfoque combina
-            técnica, táctica, preparación física y valores humanos como el respeto, la disciplina y el trabajo en equipo.
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-white">Quiénes <span style="color: #c9a227;">somos</span></h2>
+          <p class="leading-relaxed mb-4" style="color: #c8bfa0;">
+            En Halcon Dorado formamos futbolistas con una visión integral del deporte. Nuestro enfoque combina técnica, táctica, preparación física y valores humanos como el respeto, la disciplina y el trabajo en equipo.
           </p>
-          <p class="text-gray-600 leading-relaxed">
-            Contamos con entrenadores certificados y una metodología adaptada a cada edad para potenciar el talento
-            de nuestros jugadores y jugadoras en un ambiente seguro y motivador.
+          <p class="leading-relaxed" style="color: #c8bfa0;">
+            Contamos con entrenadores certificados y una metodología adaptada a cada edad para potenciar el talento de nuestros jugadores y jugadoras en un ambiente seguro y motivador.
           </p>
         </div>
         <div class="relative">
-          <img class="rounded-2xl shadow-xl w-full object-cover h-80" src="
-            https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1400&auto=format&fit=crop
-          " alt="Entrenamiento de fútbol infantil" />
-          <div class="absolute -bottom-6 -right-6 bg-yellow-500 text-black px-6 py-3 rounded-xl shadow-lg font-semibold">
+          <img class="rounded-2xl shadow-xl w-full object-cover h-80" src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1400&auto=format&fit=crop" alt="Entrenamiento de fútbol infantil" />
+          <div class="absolute -bottom-6 -right-6 px-6 py-3 rounded-xl shadow-lg font-semibold" style="background-color: #c9a227; color: #0d1b2a;">
             Más de 200 alumnos activos
           </div>
         </div>
@@ -196,58 +166,56 @@
     </section>
 
     <!-- Categorías -->
-    <section id="categorias" class="py-20 bg-gray-50">
+    <section id="categorias" class="py-20" style="background-color: #0a1520;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center">Nuestras <span class="text-yellow-600">categorías</span></h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center text-white">Nuestras <span style="color: #c9a227;">categorías</span></h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Card -->
-          <div class="bg-white rounded-xl shadow p-6 text-center">
-            <div class="w-14 h-14 mx-auto rounded-full bg-yellow-100 flex items-center justify-center mb-4">
-              <i class="ri-user-smile-line text-2xl text-yellow-600"></i>
+          <div class="rounded-xl shadow p-6 text-center" style="background-color: #112240; border: 1px solid #c9a22740;">
+            <div class="w-14 h-14 mx-auto rounded-full flex items-center justify-center mb-4" style="background-color: #c9a22720;">
+              <i class="ri-user-smile-line text-2xl" style="color: #c9a227;"></i>
             </div>
-            <h3 class="font-bold">Sub-6</h3>
-            <p class="text-gray-600 text-sm mt-2">Iniciación lúdica y motricidad</p>
+            <h3 class="font-bold text-white">Sub-6</h3>
+            <p class="text-sm mt-2" style="color: #c8bfa0;">Iniciación lúdica y motricidad</p>
           </div>
-          <div class="bg-white rounded-xl shadow p-6 text-center">
-            <div class="w-14 h-14 mx-auto rounded-full bg-yellow-100 flex items-center justify-center mb-4">
-              <i class="ri-team-line text-2xl text-yellow-600"></i>
+          <div class="rounded-xl shadow p-6 text-center" style="background-color: #112240; border: 1px solid #c9a22740;">
+            <div class="w-14 h-14 mx-auto rounded-full flex items-center justify-center mb-4" style="background-color: #c9a22720;">
+              <i class="ri-team-line text-2xl" style="color: #c9a227;"></i>
             </div>
-            <h3 class="font-bold">Sub-8</h3>
-            <p class="text-gray-600 text-sm mt-2">Fundamentos técnicos básicos</p>
+            <h3 class="font-bold text-white">Sub-8</h3>
+            <p class="text-sm mt-2" style="color: #c8bfa0;">Fundamentos técnicos básicos</p>
           </div>
-          <div class="bg-white rounded-xl shadow p-6 text-center">
-            <div class="w-14 h-14 mx-auto rounded-full bg-yellow-100 flex items-center justify-center mb-4">
-              <i class="ri-run-line text-2xl text-yellow-600"></i>
+          <div class="rounded-xl shadow p-6 text-center" style="background-color: #112240; border: 1px solid #c9a22740;">
+            <div class="w-14 h-14 mx-auto rounded-full flex items-center justify-center mb-4" style="background-color: #c9a22720;">
+              <i class="ri-run-line text-2xl" style="color: #c9a227;"></i>
             </div>
-            <h3 class="font-bold">Sub-10</h3>
-            <p class="text-gray-600 text-sm mt-2">Técnica, táctica y juego colectivo</p>
+            <h3 class="font-bold text-white">Sub-10</h3>
+            <p class="text-sm mt-2" style="color: #c8bfa0;">Técnica, táctica y juego colectivo</p>
           </div>
-          <div class="bg-white rounded-xl shadow p-6 text-center">
-            <div class="w-14 h-14 mx-auto rounded-full bg-yellow-100 flex items-center justify-center mb-4">
-              <i class="ri-trophy-line text-2xl text-yellow-600"></i>
+          <div class="rounded-xl shadow p-6 text-center" style="background-color: #112240; border: 1px solid #c9a22740;">
+            <div class="w-14 h-14 mx-auto rounded-full flex items-center justify-center mb-4" style="background-color: #c9a22720;">
+              <i class="ri-trophy-line text-2xl" style="color: #c9a227;"></i>
             </div>
-            <h3 class="font-bold">Sub-12 y Sub-14</h3>
-            <p class="text-gray-600 text-sm mt-2">Competencia y alto rendimiento</p>
+            <h3 class="font-bold text-white">Sub-12 y Sub-14</h3>
+            <p class="text-sm mt-2" style="color: #c8bfa0;">Competencia y alto rendimiento</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Inscripciones -->
-    <section id="inscripciones" class="py-20">
+    <section id="inscripciones" class="py-20" style="background-color: #0d1b2a;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Proceso de <span class="text-yellow-600">inscripción</span></h2>
-            <ol class="list-decimal ml-5 space-y-2 text-gray-700">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-white">Proceso de <span style="color: #c9a227;">inscripción</span></h2>
+            <ol class="list-decimal ml-5 space-y-2" style="color: #c8bfa0;">
               <li>Completa el formulario de inscripción.</li>
               <li>Presenta certificado médico de aptitud física.</li>
               <li>Asiste a una clase de prueba gratuita.</li>
               <li>Formaliza tu inscripción y elige tu horario.</li>
             </ol>
-            <a href="#contacto" class="inline-flex items-center mt-6 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded-lg shadow">
-              <i class="ri-mail-send-line mr-2"></i>
-              Quiero inscribirme
+            <a href="#contacto" class="inline-flex items-center mt-6 font-semibold py-3 px-6 rounded-lg shadow" style="background-color: #c9a227; color: #0d1b2a;">
+              <i class="ri-mail-send-line mr-2"></i>Quiero inscribirme
             </a>
           </div>
           <div>
@@ -258,29 +226,29 @@
     </section>
 
     <!-- Noticias -->
-    <section id="noticias" class="py-20 bg-gray-50">
+    <section id="noticias" class="py-20" style="background-color: #0a1520;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center">Últimas <span class="text-yellow-600">noticias</span></h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center text-white">Últimas <span style="color: #c9a227;">noticias</span></h2>
         <div class="grid md:grid-cols-3 gap-6">
-          <article class="bg-white rounded-xl shadow overflow-hidden">
+          <article class="rounded-xl shadow overflow-hidden" style="background-color: #112240; border: 1px solid #c9a22740;">
             <img class="w-full h-40 object-cover" src="https://images.unsplash.com/photo-1512163143273-bde0e3cc7404?q=80&w=1200&auto=format&fit=crop" alt="Entrenamiento" />
             <div class="p-6">
-              <h3 class="font-bold mb-2">Nueva sede de entrenamiento</h3>
-              <p class="text-gray-600 text-sm">Abrimos cupos en nuestra nueva cancha con césped de última generación.</p>
+              <h3 class="font-bold mb-2 text-white">Nueva sede de entrenamiento</h3>
+              <p class="text-sm" style="color: #c8bfa0;">Abrimos cupos en nuestra nueva cancha con césped de última generación.</p>
             </div>
           </article>
-          <article class="bg-white rounded-xl shadow overflow-hidden">
+          <article class="rounded-xl shadow overflow-hidden" style="background-color: #112240; border: 1px solid #c9a22740;">
             <img class="w-full h-40 object-cover" src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?q=80&w=1200&auto=format&fit=crop" alt="Torneo" />
             <div class="p-6">
-              <h3 class="font-bold mb-2">Campeones del torneo local</h3>
-              <p class="text-gray-600 text-sm">Felicitamos a la categoría Sub-12 por su gran desempeño y título.</p>
+              <h3 class="font-bold mb-2 text-white">Campeones del torneo local</h3>
+              <p class="text-sm" style="color: #c8bfa0;">Felicitamos a la categoría Sub-12 por su gran desempeño y título.</p>
             </div>
           </article>
-          <article class="bg-white rounded-xl shadow overflow-hidden">
+          <article class="rounded-xl shadow overflow-hidden" style="background-color: #112240; border: 1px solid #c9a22740;">
             <img class="w-full h-40 object-cover" src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop" alt="Clínica" />
             <div class="p-6">
-              <h3 class="font-bold mb-2">Clínica de arqueros</h3>
-              <p class="text-gray-600 text-sm">Inscríbete a nuestra clínica especializada con entrenadores invitados.</p>
+              <h3 class="font-bold mb-2 text-white">Clínica de arqueros</h3>
+              <p class="text-sm" style="color: #c8bfa0;">Inscríbete a nuestra clínica especializada con entrenadores invitados.</p>
             </div>
           </article>
         </div>
@@ -288,9 +256,9 @@
     </section>
 
     <!-- Galería -->
-    <section id="galeria" class="py-20">
+    <section id="galeria" class="py-20" style="background-color: #0d1b2a;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center">Nuestra <span class="text-yellow-600">galería</span></h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center text-white">Nuestra <span style="color: #c9a227;">galería</span></h2>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           <img class="h-48 w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1200&auto=format&fit=crop" alt="Entrenamiento 1" />
           <img class="h-48 w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?q=80&w=1200&auto=format&fit=crop" alt="Entrenamiento 2" />
@@ -303,86 +271,141 @@
     </section>
 
     <!-- Contacto -->
-    <section id="contacto" class="py-20 bg-gray-50">
+    <section id="contacto" class="py-20" style="background-color: #0a1520;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center">Contacto</h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-2 text-center text-white">Contacto</h2>
+        <p class="text-center mb-10" style="color: #c8bfa0;">Escríbenos y te respondemos pronto</p>
         <div class="grid lg:grid-cols-2 gap-10 items-start">
-          <form class="bg-white rounded-2xl shadow p-8 space-y-4">
+
+          <!-- Formulario -->
+          <form class="rounded-2xl shadow p-8 space-y-5" style="background-color: #112240; border: 1px solid #c9a22740;">
+            <h3 class="text-xl font-bold text-white mb-2">Envíanos un mensaje</h3>
             <div>
-              <label class="block text-sm font-medium mb-1" for="nombre">Nombre y apellido</label>
-              <input id="nombre" type="text" class="w-full rounded-lg border-gray-300 focus:ring-yellow-500 focus:border-yellow-500" placeholder="Tu nombre" />
+              <label class="block text-sm font-medium mb-1" style="color: #c9a227;" for="nombre">Nombre y apellido</label>
+              <input id="nombre" type="text" class="w-full rounded-lg" placeholder="Tu nombre" />
             </div>
             <div>
-              <label class="block text-sm font-medium mb-1" for="telefono">Teléfono</label>
-              <input id="telefono" type="tel" class="w-full rounded-lg border-gray-300 focus:ring-yellow-500 focus:border-yellow-500" placeholder="Tu número" />
+              <label class="block text-sm font-medium mb-1" style="color: #c9a227;" for="telefono">Teléfono</label>
+              <input id="telefono" type="tel" class="w-full rounded-lg" placeholder="Tu número" />
             </div>
             <div>
-              <label class="block text-sm font-medium mb-1" for="mensaje">Mensaje</label>
-              <textarea id="mensaje" rows="4" class="w-full rounded-lg border-gray-300 focus:ring-yellow-500 focus:border-yellow-500" placeholder="Cuéntanos qué necesitas"></textarea>
+              <label class="block text-sm font-medium mb-1" style="color: #c9a227;" for="mensaje">Mensaje</label>
+              <textarea id="mensaje" rows="4" class="w-full rounded-lg" placeholder="Cuéntanos qué necesitas"></textarea>
             </div>
-            <button type="button" onclick="window.location.href='https://wa.me/573001234567'" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 rounded-lg shadow">
-              Enviar por WhatsApp
+            <button type="button" onclick="enviarWhatsApp()" class="w-full font-bold py-3 rounded-lg shadow flex items-center justify-center gap-2 hover:opacity-90 transition-opacity" style="background-color: #c9a227; color: #0d1b2a;">
+              <i class="ri-whatsapp-fill text-lg"></i> Enviar por WhatsApp
             </button>
           </form>
-          <div class="space-y-6">
-            <div class="bg-white rounded-2xl shadow p-6">
-              <h3 class="font-bold mb-2 flex items-center"><i class="ri-map-pin-line mr-2 text-yellow-600"></i> Dirección</h3>
-              <p class="text-gray-600">Campo Deportivo Municipal, Av. Los Deportes #123, Ciudad Deportiva</p>
+
+          <!-- Info de contacto -->
+          <div class="space-y-5">
+            <!-- Dirección -->
+            <div class="rounded-2xl p-6 flex items-start gap-4" style="background-color: #112240; border: 1px solid #c9a22740;">
+              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full" style="background-color: #c9a22720; border: 1px solid #c9a22760;">
+                <i class="ri-map-pin-line text-xl" style="color: #c9a227;"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white mb-1">Dirección</h4>
+                <p style="color: #c8bfa0;">Parque Atabanza<br/>Suba, Bogotá</p>
+              </div>
             </div>
-            <div class="bg-white rounded-2xl shadow p-6">
-              <h3 class="font-bold mb-2 flex items-center"><i class="ri-phone-line mr-2 text-yellow-600"></i> Teléfono</h3>
-              <p class="text-gray-600">+57 300 123 4567</p>
+
+            <!-- Teléfono -->
+            <div class="rounded-2xl p-6 flex items-start gap-4" style="background-color: #112240; border: 1px solid #c9a22740;">
+              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full" style="background-color: #c9a22720; border: 1px solid #c9a22760;">
+                <i class="ri-phone-line text-xl" style="color: #c9a227;"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white mb-1">Teléfono</h4>
+                <a href="tel:+573001234567" class="hover:underline" style="color: #c8bfa0;">+57 300 123 4567</a>
+              </div>
             </div>
-            <div class="bg-white rounded-2xl shadow overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.2!2d-74.0!3d4.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMzYnMDAuMCJOIDc0wrAwMCcwMC4wIlc!5e0!3m2!1ses!2sco!4v1600000000000!5m2!1ses!2sco"
-                width="100%"
-                height="260"
-                style="border:0;"
-                allowfullscreen
-                loading="lazy"
-                title="Mapa ubicación halcon Dorado"
-              ></iframe>
+
+            <!-- WhatsApp -->
+            <div class="rounded-2xl p-6 flex items-start gap-4" style="background-color: #112240; border: 1px solid #22c55e40;">
+              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full" style="background-color: #22c55e20; border: 1px solid #22c55e50;">
+                <i class="ri-whatsapp-line text-xl text-green-400"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white mb-1">WhatsApp</h4>
+                <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Escribir ahora →</a>
+              </div>
             </div>
+
+            <!-- Ver en mapa -->
+            <a href="https://www.google.com/maps/place/Parque+Atabanza/@4.7086157,-74.0627325,767m/data=!3m1!1e3!4m6!3m5!1s0x8e3f85348a619c59:0x2286b8404a76643a!8m2!3d4.7086104!4d-74.0581191!16s%2Fg%2F11c604p8qx?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer"
+              class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-semibold transition-all hover:opacity-90"
+              style="background-color: #112240; border: 1px solid #c9a22740; color: #c9a227;">
+              <i class="ri-map-2-line text-xl"></i>
+              Ver ubicación en Google Maps
+            </a>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-black text-gray-300 py-10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-          <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 flex items-center justify-center rounded-full overflow-hidden">
-              <img src="imagenes/Captura.PNG" alt="Logo Halcon Dorado" class="w-full h-full object-cover" />
-            </div>
-            <span class="font-semibold">halcon Dorado</span>
+  <!-- Footer -->
+  <footer style="background-color: #070f18; border-top: 1px solid #c9a22740;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+        <!-- Logo + nombre -->
+        <div class="flex items-center space-x-3">
+          <div class="w-12 h-12 rounded-full overflow-hidden" style="border: 2px solid #c9a227;">
+            <img src="imagenes/Captura1.png" alt="Logo Halcon Dorado" class="w-full h-full object-cover" />
           </div>
-          <div class="flex items-center space-x-4 text-xl">
-            <a href="#" aria-label="Facebook" class="hover:text-white"><i class="ri-facebook-circle-fill"></i></a>
-            <a href="#" aria-label="Instagram" class="hover:text-white"><i class="ri-instagram-line"></i></a>
-            <a href="#" aria-label="YouTube" class="hover:text-white"><i class="ri-youtube-fill"></i></a>
-            <a href="https://wa.me/573001234567" aria-label="WhatsApp" class="hover:text-white"><i class="ri-whatsapp-line"></i></a>
+          <div>
+            <span class="text-lg font-bold" style="color: #c9a227; font-family: 'Pacifico', cursive;">Halcon Dorado</span>
+            <p class="text-xs" style="color: #8a7a5a;">Escuela de Fútbol</p>
           </div>
         </div>
-        <p class="text-center text-sm text-gray-500 mt-6">© <span id="year"></span> halcon Dorado. Todos los derechos reservados.</p>
+
+        <!-- Redes sociales -->
+        <div class="flex items-center space-x-5 text-2xl">
+          <a href="#" aria-label="Facebook" class="transition-colors hover:scale-110 duration-200" style="color: #c8bfa0;" onmouseover="this.style.color='#c9a227'" onmouseout="this.style.color='#c8bfa0'">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a href="#" aria-label="Instagram" class="transition-colors hover:scale-110 duration-200" style="color: #c8bfa0;" onmouseover="this.style.color='#c9a227'" onmouseout="this.style.color='#c8bfa0'">
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a href="#" aria-label="X" class="transition-colors hover:scale-110 duration-200" style="color: #c8bfa0;" onmouseover="this.style.color='#c9a227'" onmouseout="this.style.color='#c8bfa0'">
+            <i class="ri-twitter-line"></i>
+          </a>
+          <a href="https://wa.me/573001234567" aria-label="WhatsApp" class="transition-colors hover:scale-110 duration-200" style="color: #c8bfa0;" onmouseover="this.style.color='#22c55e'" onmouseout="this.style.color='#c8bfa0'">
+            <i class="ri-whatsapp-line"></i>
+          </a>
+        </div>
       </div>
-    </footer>
 
-    <script>
-      // Año automático en footer
-      document.getElementById('year').textContent = new Date().getFullYear();
+      <!-- Línea divisora -->
+      <div class="my-6" style="border-top: 1px solid #c9a22730;"></div>
 
-      // Menú móvil
-      function toggleMobileMenu() {
-        var menu = document.getElementById('mobile-menu');
-        var icon = document.getElementById('menu-icon');
-        if (!menu || !icon) return;
-        menu.classList.toggle('hidden');
-        icon.classList.toggle('ri-menu-line');
-        icon.classList.toggle('ri-close-line');
-      }
-    </script>
-  </body>
+      <p class="text-center text-sm" style="color: #8a7a5a;">
+        © <span id="year"></span> <span style="color: #c9a227;">Halcon Dorado</span>. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function toggleMobileMenu() {
+      var menu = document.getElementById('mobile-menu');
+      var icon = document.getElementById('menu-icon');
+      if (!menu || !icon) return;
+      menu.classList.toggle('hidden');
+      icon.classList.toggle('ri-menu-line');
+      icon.classList.toggle('ri-close-line');
+    }
+    function enviarWhatsApp() {
+      var nombre = document.getElementById('nombre').value.trim();
+      var telefono = document.getElementById('telefono').value.trim();
+      var mensaje = document.getElementById('mensaje').value.trim();
+      if (!nombre) { alert('Por favor ingresa tu nombre.'); return; }
+      var texto = 'Hola, soy ' + nombre;
+      if (telefono) texto += '. Mi teléfono es ' + telefono;
+      if (mensaje) texto += '. ' + mensaje;
+      window.open('https://wa.me/573001234567?text=' + encodeURIComponent(texto), '_blank');
+    }
+  </script>
+</body>
 </html>
