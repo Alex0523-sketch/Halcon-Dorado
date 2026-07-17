@@ -24,6 +24,58 @@
       input, textarea { background-color: #0f2236 !important; color: #e5d9b6 !important; border: 1px solid #c9a22755 !important; padding: 0.5rem 0.75rem; }
       input::placeholder, textarea::placeholder { color: #8a7a5a; }
       input:focus, textarea:focus { outline: none; border-color: #c9a227 !important; box-shadow: 0 0 0 2px #c9a22733; }
+
+      /* ===== PARTÍCULAS HERO ===== */
+      .particle {
+        position: absolute;
+        left: var(--x);
+        top: var(--y);
+        width: var(--s);
+        height: var(--s);
+        border-radius: 50%;
+        background: radial-gradient(circle, #e2b93b 0%, rgba(201,162,39,0.3) 60%, transparent 100%);
+        animation: particleFloat var(--d) ease-in-out infinite alternate;
+        box-shadow: 0 0 8px rgba(201,162,39,0.6);
+      }
+      @keyframes particleFloat {
+        from { transform: translateY(0px) scale(1);   opacity: 0.5; }
+        to   { transform: translateY(-18px) scale(1.3); opacity: 1; }
+      }
+
+      /* ===== BOTÓN GLASS (secundario en hero) ===== */
+      #inicio a[href="#quienes-somos"] {
+        transition: all 0.3s ease;
+      }
+      #inicio a[href="#quienes-somos"]:hover {
+        background: rgba(201,162,39,0.18) !important;
+        border-color: rgba(201,162,39,0.65) !important;
+        box-shadow: 0 0 24px rgba(201,162,39,0.3);
+        transform: translateY(-1px);
+      }
+
+      /* ===== STATS HERO ===== */
+      #inicio .flex.flex-wrap > .text-center {
+        padding: 0 1.5rem;
+        border-right: 1px solid rgba(201,162,39,0.2);
+      }
+      #inicio .flex.flex-wrap > .text-center:last-child {
+        border-right: none;
+      }
+
+      /* ===== SCROLL INDICATOR ===== */
+      #inicio .animate-bounce {
+        animation: bounceDown 1.5s ease-in-out infinite;
+      }
+      @keyframes bounceDown {
+        0%, 100% { transform: translateY(0); }
+        50%       { transform: translateY(6px); }
+      }
+
+      /* ===== DIVISORES ENTRE SECCIONES ===== */
+      [aria-hidden="true"][style*="height:2px"] {
+        position: relative;
+        z-index: 1;
+      }
     </style>
   </head>
   <body class="m-0 p-0 antialiased" style="font-family: 'Inter', system-ui, sans-serif; background-color: #0d1b2a; color: #e5d9b6;">
@@ -72,29 +124,75 @@
 
     <!-- Hero -->
     <section id="inicio" class="relative w-full flex items-center justify-center overflow-hidden" style="min-height: 100vh; margin-top: -80px; padding-top: 80px;">
+      <!-- Fondo GIF -->
       <div class="absolute inset-0 z-0">
         <img src="imagenes/animate-the-golden-falcon-emblem-with-a-majestic-g-ezgif.com-optimize.gif" alt="Fondo Halcon Dorado" class="w-full h-full object-cover" />
-        <div class="absolute inset-0" style="background: #0d1b2acc;"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/60"></div>
+        <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(13,27,42,0.82) 0%, rgba(13,27,42,0.60) 50%, rgba(13,27,42,0.92) 100%);"></div>
       </div>
+
+      <!-- Partículas decorativas -->
+      <div class="absolute inset-0 z-1 pointer-events-none" id="hero-particles" aria-hidden="true">
+        <span class="particle" style="--x:12%; --y:20%; --s:5px; --d:2.1s;"></span>
+        <span class="particle" style="--x:30%; --y:70%; --s:3px; --d:3.4s;"></span>
+        <span class="particle" style="--x:55%; --y:15%; --s:4px; --d:2.7s;"></span>
+        <span class="particle" style="--x:72%; --y:55%; --s:6px; --d:1.9s;"></span>
+        <span class="particle" style="--x:88%; --y:30%; --s:3px; --d:3.8s;"></span>
+        <span class="particle" style="--x:20%; --y:85%; --s:4px; --d:2.5s;"></span>
+        <span class="particle" style="--x:65%; --y:80%; --s:5px; --d:4.1s;"></span>
+        <span class="particle" style="--x:42%; --y:42%; --s:3px; --d:3.0s;"></span>
+      </div>
+
+      <!-- Contenido hero -->
       <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
-        <h1 class="text-5xl lg:text-7xl font-extrabold mb-6 leading-tight" style="color: #c9a227;">Halcon Dorado</h1>
+        <h1 class="text-5xl lg:text-7xl font-extrabold mb-6 leading-tight" style="color: #c9a227; font-family: 'Pacifico', cursive;">Halcon Dorado</h1>
         <p class="text-2xl lg:text-4xl font-semibold mb-8" style="color: #e2b93b;">Donde nacen los campeones</p>
         <p class="text-lg lg:text-xl mb-12 max-w-2xl mx-auto leading-relaxed" style="color: #c8bfa0;">
           Formamos futbolistas integrales con valores, disciplina y pasión por el deporte. Únete a nuestra familia deportiva y desarrolla tu máximo potencial.
         </p>
-        <a href="#inscripciones" class="font-semibold rounded-lg transition-all duration-200 px-12 py-4 text-lg shadow-2xl hover:scale-105 inline-flex items-center" style="background-color: #c9a227; color: #0d1b2a;">
-          <i class="ri-arrow-right-line mr-2"></i>Inscríbete ahora
-        </a>
+
+        <!-- Botones hero -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#inscripciones" class="font-semibold rounded-lg px-12 py-4 text-lg inline-flex items-center gap-2" style="background-color: #c9a227; color: #0d1b2a;">
+            <i class="ri-arrow-right-line"></i>Inscríbete ahora
+          </a>
+          <a href="#quienes-somos" class="font-semibold rounded-lg px-10 py-4 text-lg inline-flex items-center gap-2" style="background: rgba(201,162,39,0.1); border: 1px solid rgba(201,162,39,0.4); color: #e2b93b; backdrop-filter: blur(8px);">
+            <i class="ri-play-circle-line"></i>Conoce más
+          </a>
+        </div>
+
+        <!-- Stats rápidas -->
+        <div class="flex flex-wrap justify-center gap-8 mt-16">
+          <div class="text-center">
+            <div class="text-3xl font-extrabold" style="color: #c9a227;">50+</div>
+            <div class="text-sm mt-1" style="color: #8a7a5a;">Alumnos activos</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-extrabold" style="color: #c9a227;">4</div>
+            <div class="text-sm mt-1" style="color: #8a7a5a;">Categorías</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-extrabold" style="color: #c9a227;">3</div>
+            <div class="text-sm mt-1" style="color: #8a7a5a;">Días de entrenamiento</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2" style="color: rgba(201,162,39,0.5);">
+        <span class="text-xs tracking-widest uppercase" style="font-size: 10px;">Desliza</span>
+        <i class="ri-arrow-down-line text-lg animate-bounce"></i>
       </div>
     </section>
+
+    <!-- Divisor de sección -->
+    <div aria-hidden="true" style="height:2px; background: linear-gradient(90deg, transparent, rgba(201,162,39,0.4), rgba(201,162,39,0.7), rgba(201,162,39,0.4), transparent);"></div>
 
     <!-- Quick Info -->
     <section class="py-16" style="background-color: #0a1520;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-3 gap-8 stagger-group">
           <!-- Horarios -->
-          <div class="rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300" style="background-color: #112240; border: 1px solid #c9a22740;">
+          <div class="rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300 reveal-zoom" style="background-color: #112240; border: 1px solid #c9a22740;">
             <div class="w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-6" style="background-color: #c9a22720; border: 1px solid #c9a22760;">
               <i class="ri-time-line text-3xl" style="color: #c9a227;"></i>
             </div>
@@ -113,7 +211,7 @@
           </div>
 
           <!-- Ubicación -->
-          <div class="rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300" style="background-color: #112240; border: 1px solid #c9a22740;">
+          <div class="rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300 reveal-zoom" style="background-color: #112240; border: 1px solid #c9a22740;">
             <div class="w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-6" style="background-color: #c9a22720; border: 1px solid #c9a22760;">
               <i class="ri-map-pin-line text-3xl" style="color: #c9a227;"></i>
             </div>
@@ -127,7 +225,7 @@
           </div>
 
           <!-- WhatsApp -->
-          <div class="rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300" style="background-color: #112240; border: 1px solid #22c55e40;">
+          <div class="rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300 reveal-zoom" style="background-color: #112240; border: 1px solid #22c55e40;">
             <div class="w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-6" style="background-color: #22c55e20; border: 1px solid #22c55e50;">
               <i class="ri-whatsapp-line text-3xl text-green-400"></i>
             </div>
@@ -145,9 +243,10 @@
     </section>
 
     <!-- Quiénes somos -->
+    <div aria-hidden="true" style="height:2px; background: linear-gradient(90deg, transparent, rgba(201,162,39,0.4), rgba(201,162,39,0.7), rgba(201,162,39,0.4), transparent);"></div>
     <section id="quienes-somos" class="py-20" style="background-color: #0d1b2a;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-        <div>
+        <div class="reveal-left">
           <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-white">Quiénes <span style="color: #c9a227;">somos</span></h2>
           <p class="leading-relaxed mb-4" style="color: #c8bfa0;">
             En Halcon Dorado formamos futbolistas con una visión integral del deporte. Nuestro enfoque combina técnica, táctica, preparación física y valores humanos como el respeto, la disciplina y el trabajo en equipo.
@@ -156,46 +255,50 @@
             Contamos con entrenadores certificados y una metodología adaptada a cada edad para potenciar el talento de nuestros jugadores y jugadoras en un ambiente seguro y motivador.
           </p>
         </div>
-        <div class="relative">
-          <img class="rounded-2xl shadow-xl w-full object-cover h-80" src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1400&auto=format&fit=crop" alt="Entrenamiento de fútbol infantil" />
+        <div class="relative reveal-right">
           <div class="absolute -bottom-6 -right-6 px-6 py-3 rounded-xl shadow-lg font-semibold" style="background-color: #c9a227; color: #0d1b2a;">
-            Más de 200 alumnos activos
+            Más de 50 alumnos activos
           </div>
         </div>
       </div>
     </section>
 
     <!-- Categorías -->
+    <div aria-hidden="true" style="height:2px; background: linear-gradient(90deg, transparent, rgba(201,162,39,0.4), rgba(201,162,39,0.7), rgba(201,162,39,0.4), transparent);"></div>
     <section id="categorias" class="py-20" style="background-color: #0a1520;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center text-white">Nuestras <span style="color: #c9a227;">categorías</span></h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="rounded-xl shadow p-6 text-center" style="background-color: #112240; border: 1px solid #c9a22740;">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center text-white reveal">Nuestras <span style="color: #c9a227;">categorías</span></h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-group">
+          <div class="rounded-xl shadow p-6 text-center group reveal-zoom" style="background-color: #112240; border: 1px solid #c9a22740;">
             <div class="w-14 h-14 mx-auto rounded-full flex items-center justify-center mb-4" style="background-color: #c9a22720;">
               <i class="ri-user-smile-line text-2xl" style="color: #c9a227;"></i>
             </div>
-            <h3 class="font-bold text-white">Sub-6</h3>
+            <div class="inline-block px-3 py-1 rounded-full text-xs font-bold mb-3" style="background: rgba(201,162,39,0.15); color: #e2b93b; border: 1px solid rgba(201,162,39,0.3);">4–6 años</div>
+            <h3 class="font-bold text-white text-lg">Sub-6</h3>
             <p class="text-sm mt-2" style="color: #c8bfa0;">Iniciación lúdica y motricidad</p>
           </div>
-          <div class="rounded-xl shadow p-6 text-center" style="background-color: #112240; border: 1px solid #c9a22740;">
+          <div class="rounded-xl shadow p-6 text-center group reveal-zoom" style="background-color: #112240; border: 1px solid #c9a22740;">
             <div class="w-14 h-14 mx-auto rounded-full flex items-center justify-center mb-4" style="background-color: #c9a22720;">
               <i class="ri-team-line text-2xl" style="color: #c9a227;"></i>
             </div>
-            <h3 class="font-bold text-white">Sub-8</h3>
+            <div class="inline-block px-3 py-1 rounded-full text-xs font-bold mb-3" style="background: rgba(201,162,39,0.15); color: #e2b93b; border: 1px solid rgba(201,162,39,0.3);">7–8 años</div>
+            <h3 class="font-bold text-white text-lg">Sub-8</h3>
             <p class="text-sm mt-2" style="color: #c8bfa0;">Fundamentos técnicos básicos</p>
           </div>
-          <div class="rounded-xl shadow p-6 text-center" style="background-color: #112240; border: 1px solid #c9a22740;">
+          <div class="rounded-xl shadow p-6 text-center group reveal-zoom" style="background-color: #112240; border: 1px solid #c9a22740;">
             <div class="w-14 h-14 mx-auto rounded-full flex items-center justify-center mb-4" style="background-color: #c9a22720;">
               <i class="ri-run-line text-2xl" style="color: #c9a227;"></i>
             </div>
-            <h3 class="font-bold text-white">Sub-10</h3>
+            <div class="inline-block px-3 py-1 rounded-full text-xs font-bold mb-3" style="background: rgba(201,162,39,0.15); color: #e2b93b; border: 1px solid rgba(201,162,39,0.3);">9–10 años</div>
+            <h3 class="font-bold text-white text-lg">Sub-10</h3>
             <p class="text-sm mt-2" style="color: #c8bfa0;">Técnica, táctica y juego colectivo</p>
           </div>
-          <div class="rounded-xl shadow p-6 text-center" style="background-color: #112240; border: 1px solid #c9a22740;">
+          <div class="rounded-xl shadow p-6 text-center group reveal-zoom" style="background-color: #112240; border: 1px solid #c9a22740;">
             <div class="w-14 h-14 mx-auto rounded-full flex items-center justify-center mb-4" style="background-color: #c9a22720;">
               <i class="ri-trophy-line text-2xl" style="color: #c9a227;"></i>
             </div>
-            <h3 class="font-bold text-white">Sub-12 y Sub-14</h3>
+            <div class="inline-block px-3 py-1 rounded-full text-xs font-bold mb-3" style="background: rgba(201,162,39,0.15); color: #e2b93b; border: 1px solid rgba(201,162,39,0.3);">11–14 años</div>
+            <h3 class="font-bold text-white text-lg">Sub-12 y Sub-14</h3>
             <p class="text-sm mt-2" style="color: #c8bfa0;">Competencia y alto rendimiento</p>
           </div>
         </div>
@@ -203,10 +306,11 @@
     </section>
 
     <!-- Inscripciones -->
+    <div aria-hidden="true" style="height:2px; background: linear-gradient(90deg, transparent, rgba(201,162,39,0.4), rgba(201,162,39,0.7), rgba(201,162,39,0.4), transparent);"></div>
     <section id="inscripciones" class="py-20" style="background-color: #0d1b2a;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-10 items-center">
-          <div>
+          <div class="reveal-left">
             <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-white">Proceso de <span style="color: #c9a227;">inscripción</span></h2>
             <ol class="list-decimal ml-5 space-y-2" style="color: #c8bfa0;">
               <li>Completa el formulario de inscripción.</li>
@@ -218,7 +322,7 @@
               <i class="ri-mail-send-line mr-2"></i>Quiero inscribirme
             </a>
           </div>
-          <div>
+          <div class="reveal-right">
             <img class="rounded-2xl shadow-xl w-full object-cover h-80" src="https://images.unsplash.com/photo-1518600506278-4e8ef466b810?q=80&w=1400&auto=format&fit=crop" alt="Niños jugando fútbol" />
           </div>
         </div>
@@ -226,25 +330,26 @@
     </section>
 
     <!-- Noticias -->
+    <div aria-hidden="true" style="height:2px; background: linear-gradient(90deg, transparent, rgba(201,162,39,0.4), rgba(201,162,39,0.7), rgba(201,162,39,0.4), transparent);"></div>
     <section id="noticias" class="py-20" style="background-color: #0a1520;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center text-white">Últimas <span style="color: #c9a227;">noticias</span></h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <article class="rounded-xl shadow overflow-hidden" style="background-color: #112240; border: 1px solid #c9a22740;">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center text-white reveal">Últimas <span style="color: #c9a227;">noticias</span></h2>
+        <div class="grid md:grid-cols-3 gap-6 stagger-group">
+          <article class="rounded-xl shadow overflow-hidden reveal-zoom" style="background-color: #112240; border: 1px solid #c9a22740;">
             <img class="w-full h-40 object-cover" src="https://images.unsplash.com/photo-1512163143273-bde0e3cc7404?q=80&w=1200&auto=format&fit=crop" alt="Entrenamiento" />
             <div class="p-6">
               <h3 class="font-bold mb-2 text-white">Nueva sede de entrenamiento</h3>
               <p class="text-sm" style="color: #c8bfa0;">Abrimos cupos en nuestra nueva cancha con césped de última generación.</p>
             </div>
           </article>
-          <article class="rounded-xl shadow overflow-hidden" style="background-color: #112240; border: 1px solid #c9a22740;">
+          <article class="rounded-xl shadow overflow-hidden reveal-zoom" style="background-color: #112240; border: 1px solid #c9a22740;">
             <img class="w-full h-40 object-cover" src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?q=80&w=1200&auto=format&fit=crop" alt="Torneo" />
             <div class="p-6">
               <h3 class="font-bold mb-2 text-white">Campeones del torneo local</h3>
               <p class="text-sm" style="color: #c8bfa0;">Felicitamos a la categoría Sub-12 por su gran desempeño y título.</p>
             </div>
           </article>
-          <article class="rounded-xl shadow overflow-hidden" style="background-color: #112240; border: 1px solid #c9a22740;">
+          <article class="rounded-xl shadow overflow-hidden reveal-zoom" style="background-color: #112240; border: 1px solid #c9a22740;">
             <img class="w-full h-40 object-cover" src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop" alt="Clínica" />
             <div class="p-6">
               <h3 class="font-bold mb-2 text-white">Clínica de arqueros</h3>
@@ -256,29 +361,31 @@
     </section>
 
     <!-- Galería -->
+    <div aria-hidden="true" style="height:2px; background: linear-gradient(90deg, transparent, rgba(201,162,39,0.4), rgba(201,162,39,0.7), rgba(201,162,39,0.4), transparent);"></div>
     <section id="galeria" class="py-20" style="background-color: #0d1b2a;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center text-white">Nuestra <span style="color: #c9a227;">galería</span></h2>
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <img class="h-48 w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1200&auto=format&fit=crop" alt="Entrenamiento 1" />
-          <img class="h-48 w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?q=80&w=1200&auto=format&fit=crop" alt="Entrenamiento 2" />
-          <img class="h-48 w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1512163143273-bde0e3cc7404?q=80&w=1200&auto=format&fit=crop" alt="Partido 1" />
-          <img class="h-48 w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1518600506278-4e8ef466b810?q=80&w=1200&auto=format&fit=crop" alt="Partido 2" />
-          <img class="h-48 w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop" alt="Equipo 1" />
-          <img class="h-48 w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop" alt="Equipo 2" />
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center text-white reveal">Nuestra <span style="color: #c9a227;">galería</span></h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 stagger-group">
+          <img class="h-48 w-full object-cover rounded-xl reveal-fade" src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1200&auto=format&fit=crop" alt="Entrenamiento 1" />
+          <img class="h-48 w-full object-cover rounded-xl reveal-fade" src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?q=80&w=1200&auto=format&fit=crop" alt="Entrenamiento 2" />
+          <img class="h-48 w-full object-cover rounded-xl reveal-fade" src="https://images.unsplash.com/photo-1512163143273-bde0e3cc7404?q=80&w=1200&auto=format&fit=crop" alt="Partido 1" />
+          <img class="h-48 w-full object-cover rounded-xl reveal-fade" src="https://images.unsplash.com/photo-1518600506278-4e8ef466b810?q=80&w=1200&auto=format&fit=crop" alt="Partido 2" />
+          <img class="h-48 w-full object-cover rounded-xl reveal-fade" src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop" alt="Equipo 1" />
+          <img class="h-48 w-full object-cover rounded-xl reveal-fade" src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop" alt="Equipo 2" />
         </div>
       </div>
     </section>
 
     <!-- Contacto -->
+    <div aria-hidden="true" style="height:2px; background: linear-gradient(90deg, transparent, rgba(201,162,39,0.4), rgba(201,162,39,0.7), rgba(201,162,39,0.4), transparent);"></div>
     <section id="contacto" class="py-20" style="background-color: #0a1520;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-extrabold mb-2 text-center text-white">Contacto</h2>
-        <p class="text-center mb-10" style="color: #c8bfa0;">Escríbenos y te respondemos pronto</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-2 text-center text-white reveal">Contacto</h2>
+        <p class="text-center mb-10 reveal" style="color: #c8bfa0;">Escríbenos y te respondemos pronto</p>
         <div class="grid lg:grid-cols-2 gap-10 items-start">
 
           <!-- Formulario -->
-          <form class="rounded-2xl shadow p-8 space-y-5" style="background-color: #112240; border: 1px solid #c9a22740;">
+          <form class="rounded-2xl shadow p-8 space-y-5 reveal-left" style="background-color: #112240; border: 1px solid #c9a22740;">
             <h3 class="text-xl font-bold text-white mb-2">Envíanos un mensaje</h3>
             <div>
               <label class="block text-sm font-medium mb-1" style="color: #c9a227;" for="nombre">Nombre y apellido</label>
@@ -298,7 +405,7 @@
           </form>
 
           <!-- Info de contacto -->
-          <div class="space-y-5">
+          <div class="space-y-5 reveal-right">
             <!-- Dirección -->
             <div class="rounded-2xl p-6 flex items-start gap-4" style="background-color: #112240; border: 1px solid #c9a22740;">
               <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full" style="background-color: #c9a22720; border: 1px solid #c9a22760;">
@@ -306,7 +413,7 @@
               </div>
               <div>
                 <h4 class="font-bold text-white mb-1">Dirección</h4>
-                <p style="color: #c8bfa0;">Parque Atabanza<br/>Suba, Bogotá</p>
+                <p style="color: #c8bfa0;">Parque Atabanza, Suba, Bogotá</p>
               </div>
             </div>
 
@@ -417,6 +524,130 @@
       if (mensaje) texto += '. ' + mensaje;
       window.open('https://wa.me/573229703500?text=' + encodeURIComponent(texto), '_blank');
     }
+  </script>
+
+  <!-- =====================================================
+       CURSOR GLOW — Brillo dorado que sigue el mouse
+       ===================================================== -->
+
+  <!-- Cursor personalizado: balón de fútbol con halo dorado -->
+  <div id="cursor-glow" aria-hidden="true">
+    <img src="imagenes/Balon.jpg" alt="" draggable="false" />
+  </div>
+
+  <script>
+    (function () {
+      const glow = document.getElementById('cursor-glow');
+      if (!glow) return;
+
+      // Posición objetivo (donde está el mouse)
+      let mouseX = 0, mouseY = 0;
+      // Posición actual del glow (se interpola hacia el objetivo)
+      let currentX = 0, currentY = 0;
+      // Factor de suavizado: más cerca de 1 = más rápido, más cerca de 0 = más lento
+      const EASE = 0.25;
+
+      let rafId = null;
+      let isVisible = false;
+
+      // Selectores de elementos interactivos para el estado hover intenso
+      const INTERACTIVE = 'a, button, input, textarea, [role="button"]';
+
+      // Actualiza la posición del mouse
+      document.addEventListener('mousemove', function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        // Muestra el glow la primera vez que se mueve el mouse
+        if (!isVisible) {
+          isVisible = true;
+          glow.style.opacity = '1';
+        }
+
+        // Detecta si está sobre un elemento interactivo
+        const target = document.elementFromPoint(e.clientX, e.clientY);
+        if (target && target.closest(INTERACTIVE)) {
+          glow.classList.add('is-hovering');
+        } else {
+          glow.classList.remove('is-hovering');
+        }
+      });
+
+      // Oculta el glow cuando el cursor sale del documento
+      document.addEventListener('mouseleave', function () {
+        isVisible = false;
+        glow.style.opacity = '0';
+      });
+
+      document.addEventListener('mouseenter', function () {
+        isVisible = true;
+        glow.style.opacity = '1';
+      });
+
+      // Loop de animación: interpola la posición actual hacia el objetivo
+      // Esto crea el efecto de "flotación" suave detrás del cursor
+      function animate() {
+        currentX += (mouseX - currentX) * EASE;
+        currentY += (mouseY - currentY) * EASE;
+
+        // Se resta la mitad del tamaño del balón (18px = 36px / 2) para centrarlo en el cursor
+        glow.style.transform =
+          'translate3d(' + (currentX - 18) + 'px, ' + (currentY - 18) + 'px, 0)';
+
+        rafId = requestAnimationFrame(animate);
+      }
+
+      animate();
+    })();
+  </script>
+
+  <!-- =====================================================
+       SCROLL REVEAL — Intersection Observer
+       ===================================================== -->
+  <script>
+    (function () {
+      // Clases que activan el estado visible
+      const REVEAL_CLASSES = [
+        '.reveal',
+        '.reveal-left',
+        '.reveal-right',
+        '.reveal-fade',
+        '.reveal-zoom',
+      ];
+
+      // Asigna --reveal-order a hijos de .stagger-group para el delay escalonado
+      document.querySelectorAll('.stagger-group').forEach(function (group) {
+        Array.from(group.children).forEach(function (child, index) {
+          child.style.setProperty('--reveal-order', index);
+        });
+      });
+
+      // Recoge todos los elementos animables
+      const targets = document.querySelectorAll(REVEAL_CLASSES.join(','));
+
+      if (!targets.length) return;
+
+      // Configuración del observer
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              // Una vez visible no necesitamos seguir observándolo
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,      // Se activa cuando el 12% del elemento es visible
+          rootMargin: '0px 0px -40px 0px',  // Empieza un poco antes del borde inferior
+        }
+      );
+
+      targets.forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
   </script>
 </body>
 </html>
