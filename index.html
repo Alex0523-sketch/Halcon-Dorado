@@ -144,43 +144,43 @@
 
       <!-- Contenido hero -->
       <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
-        <h1 class="text-5xl lg:text-7xl font-extrabold mb-6 leading-tight" style="color: #c9a227; font-family: 'Pacifico', cursive;">Halcon Dorado</h1>
-        <p class="text-2xl lg:text-4xl font-semibold mb-8" style="color: #e2b93b;">Donde nacen los campeones</p>
-        <p class="text-lg lg:text-xl mb-12 max-w-2xl mx-auto leading-relaxed" style="color: #c8bfa0;">
+        <h1 class="font-extrabold mb-4 sm:mb-6 leading-tight" style="color: #c9a227; font-family: 'Pacifico', cursive; font-size: clamp(2rem, 8vw, 5rem);">Halcon Dorado</h1>
+        <p class="font-semibold mb-4 sm:mb-6" style="color: #e2b93b; font-size: clamp(1.1rem, 4vw, 2.25rem);">Donde nacen los campeones</p>
+        <p class="mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed px-2" style="color: #c8bfa0; font-size: clamp(0.9rem, 2.5vw, 1.125rem);">
           Formamos futbolistas integrales con valores, disciplina y pasión por el deporte. Únete a nuestra familia deportiva y desarrolla tu máximo potencial.
         </p>
 
         <!-- Botones hero -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#inscripciones" class="font-semibold rounded-lg px-12 py-4 text-lg inline-flex items-center gap-2" style="background-color: #c9a227; color: #0d1b2a;">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4 sm:px-0">
+          <a href="#inscripciones" class="w-full sm:w-auto font-semibold rounded-lg px-8 py-3.5 sm:py-4 text-base sm:text-lg inline-flex items-center justify-center gap-2" style="background-color: #c9a227; color: #0d1b2a;">
             <i class="ri-arrow-right-line"></i>Inscríbete ahora
           </a>
-          <a href="#quienes-somos" class="font-semibold rounded-lg px-10 py-4 text-lg inline-flex items-center gap-2" style="background: rgba(201,162,39,0.1); border: 1px solid rgba(201,162,39,0.4); color: #e2b93b; backdrop-filter: blur(8px);">
+          <a href="#quienes-somos" class="w-full sm:w-auto font-semibold rounded-lg px-8 py-3.5 sm:py-4 text-base sm:text-lg inline-flex items-center justify-center gap-2" style="background: rgba(201,162,39,0.1); border: 1px solid rgba(201,162,39,0.4); color: #e2b93b; backdrop-filter: blur(8px);">
             <i class="ri-play-circle-line"></i>Conoce más
           </a>
         </div>
 
-        <!-- Stats rápidas -->
-        <div class="flex flex-wrap justify-center gap-8 mt-16">
-          <div class="text-center">
-            <div class="text-3xl font-extrabold" style="color: #c9a227;">50+</div>
-            <div class="text-sm mt-1" style="color: #8a7a5a;">Alumnos activos</div>
+        <!-- Stats rápidas: 2 columnas en móvil, 3 en desktop -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6 mt-10 sm:mt-14 px-2 sm:px-0">
+          <div class="text-center py-3 px-2 rounded-xl" style="background: rgba(201,162,39,0.07); border: 1px solid rgba(201,162,39,0.18);">
+            <div class="font-extrabold" style="color: #c9a227; font-size: clamp(1.4rem, 5vw, 1.875rem);">50+</div>
+            <div class="mt-1" style="color: #8a7a5a; font-size: clamp(0.65rem, 2vw, 0.8rem);">Alumnos activos</div>
           </div>
-          <div class="text-center">
-            <div class="text-3xl font-extrabold" style="color: #c9a227;">4</div>
-            <div class="text-sm mt-1" style="color: #8a7a5a;">Categorías</div>
+          <div class="text-center py-3 px-2 rounded-xl" style="background: rgba(201,162,39,0.07); border: 1px solid rgba(201,162,39,0.18);">
+            <div class="font-extrabold" style="color: #c9a227; font-size: clamp(1.4rem, 5vw, 1.875rem);">4</div>
+            <div class="mt-1" style="color: #8a7a5a; font-size: clamp(0.65rem, 2vw, 0.8rem);">Categorías</div>
           </div>
-          <div class="text-center">
-            <div class="text-3xl font-extrabold" style="color: #c9a227;">3</div>
-            <div class="text-sm mt-1" style="color: #8a7a5a;">Días de entrenamiento</div>
+          <div class="text-center py-3 px-2 rounded-xl col-span-2 sm:col-span-1" style="background: rgba(201,162,39,0.07); border: 1px solid rgba(201,162,39,0.18);">
+            <div class="font-extrabold" style="color: #c9a227; font-size: clamp(1.4rem, 5vw, 1.875rem);">3</div>
+            <div class="mt-1" style="color: #8a7a5a; font-size: clamp(0.65rem, 2vw, 0.8rem);">Días de entrenamiento</div>
           </div>
         </div>
       </div>
 
-      <!-- Scroll indicator -->
-      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2" style="color: rgba(201,162,39,0.5);">
-        <span class="text-xs tracking-widest uppercase" style="font-size: 10px;">Desliza</span>
-        <i class="ri-arrow-down-line text-lg animate-bounce"></i>
+      <!-- Scroll indicator: solo en pantallas grandes -->
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-1" style="color: rgba(201,162,39,0.5);">
+        <span class="tracking-widest uppercase" style="font-size: 9px;">Desliza</span>
+        <i class="ri-arrow-down-line text-base animate-bounce"></i>
       </div>
     </section>
 
